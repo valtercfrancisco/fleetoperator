@@ -6,13 +6,11 @@ import org.springframework.data.mongodb.repository.Query
 import java.time.LocalDate
 
 interface VehicleRepository: MongoRepository<Trace, String> {
-    @Query(value = "{'timeFrame' : {\$gt : ?0, \$lt : ?1}, 'operator' : ?2}",
-            fields = "{_id : 0, operator : 1}")
-    fun findVehiclesForOperator(startTime: LocalDate, endTime: LocalDate,
+    @Query(value = "{'timeFrame' : {\$gte : ?0, \$lte : ?1}, 'operator' : ?2}", fields="{ '_id' : 0, 'vehicleId' : 1}")
+    fun findVehiclesForOperator(startDate: LocalDate, endDate: LocalDate,
                                 operator: String): List<Trace>
 
-    @Query(value = "{'timeFrame' : {\$gt : ?0, \$lt : ?1}, 'operator' : ?2, 'atStop' : ?4}",
-            fields = "{_id : 0, operator : 1}")
-    fun findVehiclesForOperatorAtStop(startTime: LocalDate, endTime: LocalDate,
+    @Query(value = "{'timeFrame' : {\$gte : ?0, \$lte : ?1}, 'operator' : ?2, 'atStop' : ?3}", fields="{ '_id' : 0, 'vehicleId' : 1}")
+    fun findVehiclesForOperatorAtStop(startDate: LocalDate, endDate: LocalDate,
                                       operator: String, atStop: Int): List<Trace>
 }

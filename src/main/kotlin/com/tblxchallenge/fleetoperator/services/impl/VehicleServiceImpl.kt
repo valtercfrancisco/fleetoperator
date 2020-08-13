@@ -10,6 +10,6 @@ class VehicleServiceImpl(private val vehicleRepository: VehicleRepository) : Veh
     override fun findVehiclesForOperator(startTime: LocalDate, endTime: LocalDate, operator: String) =
             vehicleRepository.findVehiclesForOperator(startTime, endTime, operator)
 
-    override fun findVehiclesForOperatorAtStop(startTime: LocalDate, endTime: LocalDate, operator: String) =
+    override fun findVehiclesAtStop(startTime: LocalDate, endTime: LocalDate, operator: String) =
             vehicleRepository.findVehiclesForOperatorAtStop(startTime, endTime, operator, 1)
 }

@@ -5,5 +5,5 @@ import java.time.LocalDate
 
 interface VehicleService {
     fun findVehiclesForOperator(startTime: LocalDate, endTime: LocalDate, operator: String) : List<Trace>
-    fun findVehiclesForOperatorAtStop(startTime: LocalDate, endTime: LocalDate, operator: String) : List<Trace>
+    fun findVehiclesAtStop(startTime: LocalDate, endTime: LocalDate, operator: String) : List<Trace>
 }

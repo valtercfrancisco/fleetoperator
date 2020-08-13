@@ -7,6 +7,6 @@ import java.time.LocalDate
 
 interface OperatorRepository: MongoRepository<Trace, String> {
     @Query(value = "{'timeFrame' : {\$gte : ?0, \$lte : ?1}}", fields="{ '_id' : 0, 'operator' : 1}")
-    fun findAllByTimeFrameBetween(startTime: LocalDate, endTime: LocalDate): List<Trace>
+    fun findAllByTimeFrameBetween(startDate: LocalDate, endDate: LocalDate): List<Trace>
 
 }

@@ -4,5 +4,5 @@ import com.tblxchallenge.fleetoperator.documents.Trace
 import java.time.LocalDate
 
 interface OperatorService {
-    fun findRunningOperators(startTime: LocalDate, endTime: LocalDate): List<Trace>
+    fun findRunningOperators(startDate: LocalDate, endDate: LocalDate): List<Trace>
 }
