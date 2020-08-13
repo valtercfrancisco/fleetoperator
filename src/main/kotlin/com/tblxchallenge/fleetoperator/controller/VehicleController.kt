@@ -1,7 +1,7 @@
 package com.tblxchallenge.fleetoperator.controller
 
-import com.tblxchallenge.fleetoperator.documents.Trace
 import com.tblxchallenge.fleetoperator.services.VehicleService
+import com.tblxchallenge.fleetoperator.utils.toVehicleList
 import com.tblxchallenge.fleetoperator.utils.validateDates
 import org.springframework.format.annotation.DateTimeFormat
 import org.springframework.http.ResponseEntity
@@ -36,8 +36,4 @@ class VehicleController(val vehicleService: VehicleService) {
         val result = vehicleService.findVehiclesAtStop(startDate, endDate, operator).toVehicleList()
         return ResponseEntity.ok(result)
     }
-
-    private fun List<Trace>.toVehicleList(): List<String> =
-            mapNotNull { it.vehicleId.toString() }.distinct()
-
 }

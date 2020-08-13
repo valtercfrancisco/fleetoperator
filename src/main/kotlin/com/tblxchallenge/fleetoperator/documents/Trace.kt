@@ -23,5 +23,4 @@ data class Trace @PersistenceConstructor constructor(
         val vehicleId: Int?,
         val stopId: String?,
         val atStop: Int?
-) {
-}
+)

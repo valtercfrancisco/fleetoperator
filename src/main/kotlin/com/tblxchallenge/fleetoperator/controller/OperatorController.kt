@@ -1,7 +1,7 @@
 package com.tblxchallenge.fleetoperator.controller
 
-import com.tblxchallenge.fleetoperator.documents.Trace
 import com.tblxchallenge.fleetoperator.services.OperatorService
+import com.tblxchallenge.fleetoperator.utils.toOperatorList
 import com.tblxchallenge.fleetoperator.utils.validateDates
 import org.springframework.format.annotation.DateTimeFormat
 import org.springframework.http.ResponseEntity
@@ -24,7 +24,4 @@ class OperatorController(val operatorService: OperatorService) {
         val result = operatorService.findRunningOperators(startDate, endDate).toOperatorList()
         return ResponseEntity.ok(result)
     }
-
-    private fun List<Trace>.toOperatorList(): List<String> =
-            mapNotNull { it.operator }.distinct()
 }
