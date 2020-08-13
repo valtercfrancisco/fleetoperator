@@ -1,11 +1,12 @@
 package com.tblxchallenge.fleetoperator.documents
 
 import org.springframework.data.annotation.Id
+import org.springframework.data.annotation.PersistenceConstructor
 import org.springframework.data.mongodb.core.mapping.Document
 import java.util.*
 
 @Document(collection = "gpsdata")
-data class Trace(
+data class Trace @PersistenceConstructor constructor(
         @Id var id: String? = null,
         val timestamp: Long?,
         val lineId: String?,
@@ -22,4 +23,5 @@ data class Trace(
         val vehicleId: Int?,
         val stopId: String?,
         val atStop: Int?
-)
+) {
+}

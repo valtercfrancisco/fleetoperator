@@ -7,6 +7,6 @@ import java.time.LocalDate
 
 @Service
 class TraceServiceImpl(private val traceRepository: TraceRepository) : TraceService {
-    override fun findTraceForVehicle(startTime: LocalDate, endTime: LocalDate, vehicleId: String) =
-            traceRepository.findTraceForVehicle(startTime, endTime, vehicleId)
+    override fun findTraceForVehicle(startDate: LocalDate, endDate: LocalDate, vehicleId: Int) =
+            traceRepository.findTraceForVehicle(startDate, endDate, vehicleId)
 }
