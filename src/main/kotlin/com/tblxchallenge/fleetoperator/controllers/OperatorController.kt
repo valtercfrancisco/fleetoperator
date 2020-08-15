@@ -1,4 +1,4 @@
-package com.tblxchallenge.fleetoperator.controller
+package com.tblxchallenge.fleetoperator.controllers
 
 import com.tblxchallenge.fleetoperator.services.OperatorService
 import com.tblxchallenge.fleetoperator.utils.toOperatorList
@@ -21,7 +21,7 @@ class OperatorController(val operatorService: OperatorService) {
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) endDate: LocalDate
     ) : ResponseEntity<List<String>> {
         validateDates(startDate, endDate)
-        val result = operatorService.findRunningOperators(startDate, endDate).toOperatorList()
+        val result = operatorService.findRunningOperators(startDate, endDate)
         return ResponseEntity.ok(result)
     }
 }

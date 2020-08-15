@@ -1,8 +1,9 @@
-package com.tblxchallenge.fleetoperator.controller
+package com.tblxchallenge.fleetoperator.controllers
 
 import com.tblxchallenge.fleetoperator.documents.Trace
 import com.tblxchallenge.fleetoperator.services.TraceService
 import com.tblxchallenge.fleetoperator.utils.validateDates
+import com.tblxchallenge.fleetoperator.utils.validateVehicleId
 import org.springframework.format.annotation.DateTimeFormat
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
@@ -19,10 +20,11 @@ class TraceController(val traceService: TraceService) {
     fun listOperators(
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) startDate: LocalDate,
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) endDate: LocalDate,
-            @RequestParam vehicleId: Int
+            @RequestParam vehicleId: String
     ) : ResponseEntity<List<Trace>> {
         validateDates(startDate, endDate)
-        val result = traceService.findTraceForVehicle(startDate, endDate, vehicleId)
+        vehicleId.validateVehicleId()
+        val result = traceService.findTraceForVehicle(startDate, endDate, vehicleId.toInt())
         return ResponseEntity.ok(result)
     }
 }

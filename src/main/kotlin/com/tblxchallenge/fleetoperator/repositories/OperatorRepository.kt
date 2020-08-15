@@ -1,4 +1,4 @@
-package com.tblxchallenge.fleetoperator.repository
+package com.tblxchallenge.fleetoperator.repositories
 
 import com.tblxchallenge.fleetoperator.documents.Trace
 import org.springframework.data.mongodb.repository.MongoRepository

@@ -1,8 +1,8 @@
-package com.tblxchallenge.fleetoperator.controller
+package com.tblxchallenge.fleetoperator.controllers
 
 import com.tblxchallenge.fleetoperator.services.VehicleService
-import com.tblxchallenge.fleetoperator.utils.toVehicleList
 import com.tblxchallenge.fleetoperator.utils.validateDates
+import com.tblxchallenge.fleetoperator.utils.validateOperatorId
 import org.springframework.format.annotation.DateTimeFormat
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
@@ -20,9 +20,10 @@ class VehicleController(val vehicleService: VehicleService) {
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) startDate: LocalDate,
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) endDate: LocalDate,
             @RequestParam operator: String
-    ): ResponseEntity<List<String>> {
+    ): ResponseEntity<List<Int>> {
         validateDates(startDate, endDate)
-        val result = vehicleService.findVehiclesForOperator(startDate, endDate, operator).toVehicleList()
+        operator.validateOperatorId()
+        val result = vehicleService.findVehiclesForOperator(startDate, endDate, operator)
         return ResponseEntity.ok(result)
     }
 
@@ -31,9 +32,10 @@ class VehicleController(val vehicleService: VehicleService) {
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) startDate: LocalDate,
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) endDate: LocalDate,
             @RequestParam operator: String
-    ): ResponseEntity<List<String>> {
+    ): ResponseEntity<List<Int>> {
         validateDates(startDate, endDate)
-        val result = vehicleService.findVehiclesAtStop(startDate, endDate, operator).toVehicleList()
+        operator.validateOperatorId()
+        val result = vehicleService.findVehiclesAtStop(startDate, endDate, operator)
         return ResponseEntity.ok(result)
     }
 }

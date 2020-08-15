@@ -1,6 +1,6 @@
 package com.tblxchallenge.fleetoperator.services.impl
 
-import com.tblxchallenge.fleetoperator.repository.TraceRepository
+import com.tblxchallenge.fleetoperator.repositories.TraceRepository
 import com.tblxchallenge.fleetoperator.services.TraceService
 import org.springframework.stereotype.Service
 import java.time.LocalDate

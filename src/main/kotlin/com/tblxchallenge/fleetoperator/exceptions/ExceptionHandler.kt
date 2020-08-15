@@ -1,4 +1,4 @@
-package com.tblxchallenge.fleetoperator.exception
+package com.tblxchallenge.fleetoperator.exceptions
 
 import com.tblxchallenge.fleetoperator.response.ErrorResponse
 import org.springframework.http.HttpHeaders
