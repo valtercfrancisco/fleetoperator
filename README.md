@@ -7,7 +7,7 @@ By [Valter Francisco](mailto:valter_321@hotmail.com)
 1. Navigate to [repo](https://github.com/valter321/fleetoperator)
 
 2. Before cloning repo make sure you have Git Large File Storage installed. This will allow you to download the large cvs file
- with the gps data. You can install it following the these instructions: `https://docs.github.com/en/github/managing-large-files/installing-git-large-file-storage`
+ with the gps data. You can install it following these instructions: `https://docs.github.com/en/github/managing-large-files/installing-git-large-file-storage`
 
 3. Clone repo locally using: `https://github.com/valter321/fleetoperator.git`, 
 alternatively download the zip from my github page (Code -> Download ZIP) and unzip to folder.
