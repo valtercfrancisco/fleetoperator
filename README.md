@@ -58,7 +58,7 @@ The service exposes a RESTful API to answer the following questions:
 
 4.    Given a time frame [start-time, end-time] and a vehicle, return the trace of that vehicle (GPS entries, ordered by timestamp).
 
-## Endpoints
+## Solution
 
 The server has these 4 endpoints to answer the 4 questions asked above:
 
