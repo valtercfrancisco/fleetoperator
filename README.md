@@ -23,14 +23,14 @@ using: `./database-loader.sh`
 `java -jar artifacts/fleetoperator-0.0.1-SNAPSHOT.jar`. Alternatively, you can simply open the folder in an
 IDE (I used IntelliJ), build and run application from there.
 
-6. The server runs on `http://localhost:8080/`, now you can use Postman or your browser to send api requests.
-
-7. The server runs by default in port 8080, so make sure you have that port free, and looks to connect to
+6. The server runs by default in port 8080, so make sure you have that port free, and looks to connect to
 the default port of mongodb, 27017. You can change these settings in the `application.properties` file. To
 change mongodb port simply add `spring.data.mongodb.port=mongoport` to this file. If you change the mongodb
 port though, you'll have to stop the mongodb server before running tests, or an exception will be thrown. 
 This happens because the application uses mongobd embedded process for tests and when adding this property
 both processes will use this port. 
+
+7. The server is running by default on `http://localhost:8080/`, now you can use Postman or your browser to send api requests.
 
 ## Tech Stack Discussion
 
