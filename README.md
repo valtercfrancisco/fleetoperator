@@ -5,20 +5,26 @@ By [Valter Francisco](mailto:valter_321@hotmail.com)
 ## Instructions
 
 1. Navigate to [repo](https://github.com/valter321/fleetoperator)
+
 2. Clone repo locally using: `https://github.com/valter321/fleetoperator.git`, 
 alternatively download the zip from my github page (Code -> Download ZIP) and unzip to folder.
+
 3. Before running application, we need to make sure we have a MongoDB process running and configure
 it for the application. If you don't have MongoDB, download it from here: 
 `https://www.mongodb.com/try/download/community` and follow the instructions here to install: 
 `https://docs.mongodb.com/manual/tutorial/`. Finally, run mongodb service.
+
 4. Configure the mongodb process by adding the cvs data to it. To do this, open a terminal window, 
 cd into fleetoperator folder and type `artifacts/database/database-loader.sh` to run the database
 loader and populate your mongodb with gps data. You can also do this from the database folder 
 using: `./database-loader.sh`
+
 5. Finally, from the same terminal window we run the application by using
 `java -jar artifacts/fleetoperator-0.0.1-SNAPSHOT.jar`. Alternatively, you can simply open the folder in an
 IDE (I used IntelliJ), build and run application from there.
+
 6. The server runs on `http://localhost:8080/`, now you can use Postman or your browser to send api requests.
+
 7. The server runs by default in port 8080, so make sure you have that port free, and looks to connect to
 the default port of mongodb, 27017. You can change these settings in the `application.properties` file. To
 change mongodb port simply add `spring.data.mongodb.port=mongoport` to this file. If you change the mongodb
