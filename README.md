@@ -20,7 +20,9 @@ it for the application. If you don't have MongoDB, download it from here:
 5. Configure the mongodb process by adding the cvs data to it. To do this, open a terminal window, 
 cd into fleetoperator folder and type `artifacts/database/database-loader.sh` to run the database
 loader and populate your mongodb with gps data. You can also do this from the database folder 
-using: `./database-loader.sh`
+using: `./database-loader.sh`. Make sure you have mongodb tools installed for script to work. You can check by running
+this command in your terminal: `ls "$(which mongo | sed 's/mongo//')" | grep mongo`. If mongoimport isn't on the list, 
+you need to reinstall mongo or install homebrew and run `brew install mongodb/brew/mongodb-database-tools` to install them.
 
 6. Finally, from the same terminal window we run the application by using
 `java -jar artifacts/fleetoperator-0.0.1-SNAPSHOT.jar`. Alternatively, you can simply open the folder in an
