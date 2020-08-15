@@ -11,10 +11,9 @@ By [Valter Francisco](mailto:valter_321@hotmail.com)
 
 3. Clone repo locally using: `https://github.com/valter321/fleetoperator.git`.
 
-4. Before running application, we need to make sure we have a MongoDB process running and configure
-it for the application. If you don't have MongoDB, download it from here: 
-`https://www.mongodb.com/try/download/community` and follow the instructions here to install: 
-`https://docs.mongodb.com/manual/tutorial/`. Finally, run mongodb service.
+4. Before running application, make sure we you a MongoDB process running and configure it for the application. If you 
+don't have MongoDB, download it from here: `https://www.mongodb.com/try/download/community` and follow the instructions 
+here to install: `https://docs.mongodb.com/manual/tutorial/`. Finally, run mongodb service.
 
 5. Configure the mongodb process by adding the cvs data to it. To do this, open a terminal window, 
 cd into fleetoperator folder and type `artifacts/database/database-loader.sh` to run the database
