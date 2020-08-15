@@ -34,7 +34,13 @@ both processes will use this port.
 
 ## Tech Stack Discussion
 
-I used the following technologies: Kotlin, SpringBoot, Gradle, Mockk (testing) and MongoDB.
+I used the following technologies: 
+- Kotlin 
+- SpringBoot 
+- Gradle 
+- Mockk (testing)
+- MongoDB.
+
 I used [spring initializr](https://start.spring.io/) to generate the scaffolding for this app.
 
 ## Requirements
