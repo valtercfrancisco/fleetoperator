@@ -9,8 +9,7 @@ By [Valter Francisco](mailto:valter_321@hotmail.com)
 2. Before cloning repo make sure you have Git Large File Storage installed. This will allow you to download the large cvs file
  with the gps data. You can install it following these instructions: `https://docs.github.com/en/github/managing-large-files/installing-git-large-file-storage`
 
-3. Clone repo locally using: `https://github.com/valter321/fleetoperator.git`, 
-alternatively download the zip from my github page (Code -> Download ZIP) and unzip to folder.
+3. Clone repo locally using: `https://github.com/valter321/fleetoperator.git`.
 
 4. Before running application, we need to make sure we have a MongoDB process running and configure
 it for the application. If you don't have MongoDB, download it from here: 
